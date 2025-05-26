@@ -1,4 +1,6 @@
 
+
+
 # ======================
 # Core Settings
 # ======================
@@ -9,27 +11,33 @@ set -g focus-events on
 set -g history-limit 50000
 set -g renumber-windows on
 
+
+
+# set -g mouse on
+setw -g mode-keys vi
+set -g status on
+set -g status-position top
 # ======================
 # Status Bar (Bottom)
 # ======================
 
-set -g status-position bottom
+
 set -g status-justify left
-set -g status-style bg='#282a36',fg='#f8f8f2'
+set -g status-style bg='#001d40',fg='#f8f8f2'
 set -g status-left-length 40
 set -g status-right-length 60
 
 # Left Status (session + user@host)
-set -g status-left "#[fg=#50fa7b,bg=#282a36] #S #[fg=#282a36,bg=#6272a4]#[fg=#f8f8f2,bg=#6272a4] #(whoami)@#H #[fg=#6272a4,bg=default]"
+# set -g status-left "#[fg=#50fa7b,bg=#001d40] #S #[fg=#001d40,bg=#6272a4]#[fg=#f8f8f2,bg=#6272a4] #(whoami)@#H #[fg=#6272a4,bg=default]"
 
 # Right Status (time + date)
-set -g status-right "#[fg=#6272a4,bg=default]#[fg=#f8f8f2,bg=#6272a4] %H:%M #[fg=#50fa7b,bg=#6272a4]#[fg=#282a36,bg=#50fa7b] %d-%b-%y "
+set -g status-right "#[fg=#6272a4,bg=default]#[fg=#f8f8f2,bg=#6272a4] %H:%M #[fg=#50fa7b,bg=#6272a4]#[fg=#001d40,bg=#50fa7b] %d-%b-%y "
 
 # Window Status (centered)
 set -g window-status-format " #I:#W "
-set -g window-status-current-format "#[fg=#ff79c6]#[fg=#282a36,bg=#ff79c6] #I:#W #[fg=#ff79c6,bg=#282a36]"
+set -g window-status-current-format "#[fg=#4483b8]#[fg=#001d40,bg=#4483b8] #I:#W #[fg=#4483b8,bg=#001d40]"
 set -g window-status-separator ""
-set -g window-status-activity-style bg='#282a36',fg='#ff5555'
+set -g window-status-activity-style bg='#001d40',fg='#ff5555'
 
 # ======================
 # Visual Elements
@@ -37,7 +45,7 @@ set -g window-status-activity-style bg='#282a36',fg='#ff5555'
 set -g pane-border-style fg='#44475a'
 set -g pane-active-border-style fg='#6272a4'
 set -g message-style bg='#44475a',fg='#f8f8f2'
-set -g mode-style bg='#ff79c6',fg='#282a36'
+set -g mode-style bg='#4483b8',fg='#001d40'
 
 # ======================
 # Key Bindings (Ctrl+Space)
@@ -45,3 +53,7 @@ set -g mode-style bg='#ff79c6',fg='#282a36'
 unbind C-b
 set -g prefix C-Space
 bind C-Space send-prefix
+
+
+# Load TPM
+run '~/.tmux/plugins/tpm/tpm'
